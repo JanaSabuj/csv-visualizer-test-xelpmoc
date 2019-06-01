@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+td:hover {
+    background-color: #e27815;
+  }
+
+  table#t01 tr:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+  }
+  table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+  }
+  table#t01 th {
+    background-color: rgb(54, 46, 46);
+    color: white;
+  }

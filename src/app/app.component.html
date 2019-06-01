@@ -1,0 +1,51 @@
+
+ 
+
+    <div >
+        <app-navbar> </app-navbar>
+      
+          <app-csvinput> </app-csvinput>
+      
+     
+
+      <div class="container">
+
+        <ul class="nav nav-tabs">
+
+          <li class="nav-item">
+              <a   class="nav-link btn-warning">Graphs </a>
+          </li>
+          <br>
+
+          <li class="nav-item">
+            <a  routerLink="/bar-chart" class="nav-link  ">Bar </a>
+          </li>
+
+           <li class="nav-item">
+              <a routerLink="/doughnut-chart" class="nav-link  ">Doughnut</a>
+            </li>
+
+            <li class="nav-item">
+                <a  routerLink="/radar-chart" class="nav-link">Radar </a>
+              </li>
+
+              <li class="nav-item">
+                  <a routerLink="/pie-chart" class="nav-link">Pie</a>
+                </li> 
+
+        </ul>
+
+
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+
+
+      </div>
+
+ </div>
+
+ 
+
+
+ 

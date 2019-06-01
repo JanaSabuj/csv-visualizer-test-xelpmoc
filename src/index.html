@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sabuj | Xelp</title>
+  <base href="/">
+   	
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+ 
+<script>
+let csv;
+
+$(document).ready(function(){
+ $('#load_data').click(function(){
+  $.ajax({
+ 
+   url:"../assets/employee.csv",
+   dataType:"text",
+   success:function(data)
+   {
+    csv=data;
+    var employee_data = data.split(/\r?\n|\r/);
+    var table_data = '<table class="table table-bordered table-striped" id="t01">';
+    for(var count = 0; count<employee_data.length; count++)
+    {
+     var cell_data = employee_data[count].split(",");
+     table_data += '<tr>';
+     for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+     {
+      if(count === 0)
+      {
+       table_data += '<th>'+cell_data[cell_count]+'</th>';
+      }
+      else
+      {
+       table_data += '<td>'+cell_data[cell_count]+'</td>';
+      }
+     }
+     table_data += '</tr>';
+    }
+    table_data += '</table>';
+    $('#employee_table').html(table_data);
+
+    let ans= csvJSON(csv);
+    console.log(ans);
+ 
+    
+   }
+  });
+ });
+ 
+});
+
+
+ 
+function csvJSON(csv){
+
+var lines=csv.split("\n");
+
+var result = [];
+
+var headers=lines[0].split(",");
+
+for(var i=1;i<lines.length;i++){
+
+    var obj = {};
+    var currentline=lines[i].split(",");
+
+    for(var j=0;j<headers.length;j++){
+        obj[headers[j]] = currentline[j];
+    }
+
+    result.push(obj);
+
+}
+
+//return result; //JavaScript object
+return JSON.stringify(result); //JSON
+}
+ 
+</script>
+ 
+ 
+</head>
+
+
+<body>
+  <app-root></app-root>
+  <script src="node_modules/chart.js/dist/Chart.js"></script>
+</body>
+</html>
