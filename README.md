@@ -1,3 +1,6 @@
+![chartjs](https://cms-assets.tutsplus.com/uploads/users/1251/posts/28278/preview_image/chartjs-tutsplus.jpg)
+***
+
 # Node-module
 
 First and foremost run the commannd `npm install` to install the node-modules
